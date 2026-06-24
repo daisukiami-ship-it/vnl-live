@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: vnl-live
+    env: docker
+    repo: https://github.com/daisukiami-ship-it/vnl-live
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: "8888"
