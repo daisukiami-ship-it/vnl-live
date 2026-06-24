@@ -1,4 +1,4 @@
-﻿/**
+/**
  * VNL Live - 鎺掔悆鐩存挱涓績
  * 鏁版嵁閫氳繃鏈湴 Python 鍚庣浠ｇ悊鎶撳彇 volleyballworld.com
  * 璧涚▼鏁版嵁鏉ヨ嚜 VBTV 鈫?VW 瀹屾暣鏄犲皠
