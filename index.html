@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VNL 2026 - LiveSports</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <span class="brand-icon">🏐</span>
+        <span>VNL Live</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="#" class="active" data-sport="all">全部</a>
+        <a href="#" data-sport="vnl-women">女排VNL</a>
+        <a href="#" data-sport="vnl-men">男排VNL</a>
+        <a href="#" data-sport="football">足球</a>
+        <a href="#" data-sport="basketball">篮球</a>
+      </nav>
+      <div class="nav-actions">
+        <span class="nav-match-label" id="nav-match-title">Türkiye vs China</span>
+        <button class="btn-icon" id="btn-refresh" title="刷新数据">🔄</button>
+        <button class="btn-icon" id="btn-fullscreen" title="全屏">⛶</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 三栏主体 ==================== -->
+  <main class="container">
+
+    <!-- ===== 左栏：双方球员名单 ===== -->
+    <aside class="col-left" id="col-left">
+      <!-- 主队球员 -->
+      <section class="panel roster-panel" id="roster-team-a">
+        <div class="roster-header">
+          <img class="roster-flag" src="" alt="" id="flag-a">
+          <h2 class="roster-team-name" id="team-a-name">Türkiye</h2>
+        </div>
+        <div class="roster-table-wrap">
+          <table class="roster-table" id="roster-table-a">
+            <thead><tr><th>#</th><th>球员</th><th>位置</th><th>身高</th><th>出生</th><th>俱乐部</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 客队球员 -->
+      <section class="panel roster-panel" id="roster-team-b">
+        <div class="roster-header">
+          <img class="roster-flag" src="" alt="" id="flag-b">
+          <h2 class="roster-team-name" id="team-b-name">China</h2>
+        </div>
+        <div class="roster-table-wrap">
+          <table class="roster-table" id="roster-table-b">
+            <thead><tr><th>#</th><th>球员</th><th>位置</th><th>身高</th><th>出生</th><th>俱乐部</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </aside>
+
+    <!-- ===== 中栏：直播 + 队内统计 ===== -->
+    <div class="col-mid">
+      <!-- 区域①: 直播视频 -->
+      <section class="panel player-panel" id="area-live">
+        <div class="player-wrapper" id="player-container">
+          <video id="video-player" controls autoplay muted playsinline></video>
+          <div class="player-placeholder hidden" id="player-placeholder">
+            <div class="player-icon">▶</div>
+            <p>等待直播源…</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Match Statistics by Player -->
+      <section class="panel" id="area-player-stats">
+        <h2 class="panel-title">Match Statistics by Player</h2>
+        <div class="player-stats-tabs" id="player-stats-tabs">
+          <button class="tab-btn active" data-team="a">Türkiye</button>
+          <button class="tab-btn" data-team="b">China</button>
+        </div>
+        <div class="player-stats-content" id="player-stats-content">
+          <div class="loading-hint">加载中…</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== 右栏：赛程列表 ===== -->
+    <aside class="col-right" id="col-right">
+      <section class="panel schedule-panel" id="area-schedule">
+        <h2 class="panel-title">📅 赛程</h2>
+        <div class="schedule-list" id="schedule-list">
+          <div class="loading-hint">加载中…</div>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <p>数据来源: volleyballworld.com | 仅供学习使用</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

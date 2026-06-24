@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp / debug
+*.tmp
+*.xlsx.tmp
+
+# Dev scripts (不部署的测试/调试文件)
+add_codes.py
+check_26470.py
+check_teams.py
+find_team_names.py
+match_sitemap.py
+match_vbtv_vw.py
+parse_schedule.py
+parse_vbtv.py
+quick_match.py
+quick_match2.py
+scan_26455.py
+scan_men_ids.py
+test_*.py
+test_*.js
+vbtv_parser.py
+
+# Markdown notes
+右栏改造_*.md
+赛程映射_*.md
