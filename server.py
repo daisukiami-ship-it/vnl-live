@@ -10,6 +10,7 @@ import json
 import re
 import csv
 import os
+import threading
 from datetime import datetime
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.request import Request, urlopen
@@ -252,10 +253,13 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    live_schedule.start()  # auto-scrape VBTV, hourly refresh
     port = int(os.environ.get("PORT", 8888))
     server = HTTPServer(("0.0.0.0", port), Handler)
-    print(f"VNL Live backend: http://localhost:{port}")
+    print(f"VNL Live backend: http://0.0.0.0:{port}")
+    
+    # Start schedule scraper in background (don't block server startup)
+    threading.Thread(target=live_schedule.start, daemon=True).start()
+    
     print(f"  Schedule: /api/schedule")
     print(f"  Roster: /api/roster/CHN")
     print(f"  Match: /api/match/26621")
